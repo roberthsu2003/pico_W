@@ -1,19 +1,11 @@
-# 智慧家庭
+# Raspberry Pico_W
 ## 硬體設備
 ### 主要設備:
-Arduino Nano 33 IoT
-![aruduon_nano_33_iot_with_header](abx00032_iso.jpg)
+Raspberry pico_W
 
-Arduino Nano 33 Iot(透過USB提供5V電壓)
-![](pic1.jpg)
-
-[Arduino Nano 33 Iot 永和廠商](https://www.ruten.com.tw/item/show?21402143721715#info)
-
-### 替代主要設備:
- #### NodeMCU-32S V1.3 (CH340版本) Lua WiFi物聯網開發板 ESP32-S
- ![](./images/pic1.jpeg)
- 
- [ESP32-永和廠商](https://www.ruten.com.tw/item/show?21310149011328)
+![Raspberry pico_W1](./images/pick_w1.jpeg)
+![Raspberry pico_W2](./images/pick_w2.jpeg)
+![Raspberry pico_W3](./images/pick_w3.jpeg)
  
 ### [周邊零件](./周邊零件/README.md)
 ## 一般操作
