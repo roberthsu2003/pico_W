@@ -1,16 +1,20 @@
 ## 周邊零件
-0. ### 主要零件1個
-![](./images/abx00032_iso.jpg)
+0. ### Raspberry Pico_W(主板,包含wifi功能)
+![](./images/pick_w1.jpeg)
+
+1. ### 連接線(USB-A to USB-micro)
+
+![](./images/micro-usb.png)
 
 
-1. ### 麵包板1個
+3. ### 麵包板1個
 ![](./images/M30328942_big.jpg)
 
-2. ### 40P 杜邦線 公-母 10CM 
+4. ### 40P 杜邦線 公-母 10CM 
 
 ![](./images/G3020050-A.jpg)
 
-3. ### 40P 杜邦線 公-公 10CM
+5. ### 40P 杜邦線 公-公 10CM
 
 ![](./images/21709399240680_519.jpg)
 
@@ -47,38 +51,34 @@
 
 ![](./images/838219a.jpeg)
 
-12. ### DHT11 溫度,濕度,酷熱度(支援3.3V) 1個
- 
-![](./images/dht11.png)
-
-13. LED 5mm 紅 5個
-14. LED 5mm 綠 5個
-15. LED 5mm 黃 5個
+12. LED 5mm 紅 5個
+13. LED 5mm 綠 5個
+14. LED 5mm 黃 5個
 
 ![](./images/LED5MM.png)
 
-16. IC 74HC595 1個
+15. IC 74HC595 1個
 
 ![](./images/21904711438145_860.jpg)
 
 
 
-17. 5mm RGB 3色 共陰 (4pin) 1個
+16. 5mm RGB 3色 共陰 (4pin) 1個
 
 ![](./images/51IbcXWFeSL.jpg)
 
-18. 7段顯示器 0.56" 共陰 1個
+17. 7段顯示器 0.56" 共陰 1個
 
 ![](./images/0d58.jpg)
 
-19. 超音波 HC-SR04 1個
+18. 超音波 HC-SR04 1個
 
 ![](./images/22015433394983_413.jpg)
 
-20. MFRC522 RFID(購買要pin腳已經焊好) 1個
+19. MFRC522 RFID(購買要pin腳已經焊好) 1個
 
 ![](./images/abce85.jpg)
 
-21. 迷你磁簧開關 1個
+20. 迷你磁簧開關 1個
 
 ![](./images/6xf4x0500x0500-m.jpg)
