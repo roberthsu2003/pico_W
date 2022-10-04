@@ -2,10 +2,11 @@
 ## 硬體設備
 ### 主要設備:
 Raspberry pico_W
-
 ![Raspberry pico_W1](./images/pick_w1.jpeg)
 ![Raspberry pico_W2](./images/pick_w2.jpeg)
 ![Raspberry pico_W3](./images/pick_w3.jpeg)
+
+### [官方說明文件](https://www.raspberrypi.com/documentation/microcontrollers/raspberry-pi-pico.html#raspberry-pi-pico-w19)
  
 ### [周邊零件](./周邊零件/README.md)
 ## 一般操作
