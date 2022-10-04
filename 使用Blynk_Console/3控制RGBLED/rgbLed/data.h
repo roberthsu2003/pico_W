@@ -1,0 +1,5 @@
+#define BLYNK_TEMPLATE_ID "TMPLgdXeWLMy"
+#define BLYNK_DEVICE_NAME "控制RGBLED"
+#define BLYNK_AUTH_TOKEN "T3RORuqcqyiil9vU4vpkfz6PZaTovwIZ"
+#define ID "robert_hsu_home"
+#define PASS "0926656000"

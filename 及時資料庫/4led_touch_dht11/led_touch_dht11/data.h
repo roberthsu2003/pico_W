@@ -1,0 +1,6 @@
+#define KEY "eDqcZfqY_i_BHCZVXCwb6aq7GLPKpdV4q1ePja35Mjq"
+#define EVENNAME "over30"
+#define WIFI_SSID "RobertIphone"
+#define WIFI_PASSWORD "0926656000"
+#define FIREBASE_HOST "arduinofirebase-6d104.firebaseio.com"
+#define FIREBASE_AUTH "z5lPWwjZLZuNNcUEelbJdiNaIvnR2Zfq49BuQBAa"
