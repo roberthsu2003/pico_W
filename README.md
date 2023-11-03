@@ -7,6 +7,11 @@ Raspberry pico_W
 ![Raspberry pico_W3](./images/pick_w3.jpeg)
 
 ### [官方說明文件](https://www.raspberrypi.com/documentation/microcontrollers/raspberry-pi-pico.html#raspberry-pi-pico-w19)
+
+### 購買網址
+[pico主板](https://piepie.com.tw/product/raspberry-pi-pico-wh?hilite=pico)
+
+[工具套件](https://piepie.com.tw/product/gpio-game-console-starter-kit)
  
 ### [周邊零件](./周邊零件/README.md)
 
