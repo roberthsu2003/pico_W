@@ -16,7 +16,6 @@ Raspberry pico_W
 ### [周邊零件](./周邊零件/README.md)
 
 ## 一般操作
-0_0. [電腦傳送資料給Arduino](./一般操作/0_0由電腦傳送資料給Arduino/)
 
 0_1. [計時器](./一般操作/0_1計時器/)
 
@@ -131,18 +130,4 @@ Raspberry pico_W
 - 陀螺儀和加速度計(LSM6DS3)  
 ![](LSM6DS3.png)
 
-#### arduino naon 33 iot 說明文件
-https://content.arduino.cc/assets/Pinout-NANO33IoT_latest.pdf
 
-## NodeMCU-32S V1.3 (CH340版本) Lua WiFi物聯網開發板 ESP32-S 使用說明
-
-![](./images/pic2.png)
-![](./images/pic3.png)
-
-## 安裝CH340版本 driver
-
-安裝網址(https://www.taiwaniot.com.tw/技術文件/如何安裝ch340晶片程式/)
-
-## ESP32 arduino 安裝方式
-
-安裝網址(https://makerpro.cc/2020/06/how-to-install-and-configure-esp32-development-environment/)
