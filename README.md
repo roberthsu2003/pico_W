@@ -47,6 +47,7 @@ Raspberry pico_W
 
 5. [xyz軸感測](https://github.com/roberthsu2003/smartHome/tree/master/%E4%B8%80%E8%88%AC%E6%93%8D%E4%BD%9C/5xyz%E8%BB%B8%E6%84%9F%E6%B8%AC)
 
+
 ## Blynk網路服務
 ### [Blynk說明](./使用Blynk)
 1. [控制LED](./使用Blynk/1控制LED/)
@@ -98,36 +99,7 @@ Raspberry pico_W
 1. [收集資料，繪制圖表](https://github.com/roberthsu2003/smartHome/tree/master/%E4%BD%BF%E7%94%A8ThingSpeak)
 
 
-## Arduino當作WebServer
-1.[Web Service](https://github.com/roberthsu2003/smartHome/tree/master/%E7%95%B6%E4%BD%9CWebServer)
-
-
-## arduino nano 33 iot使用說明
-![aruduon_nano_33_iot_with_header](abx00032_iso.jpg)
-
-
-
-#### 跳線線路圖
-
-![](nanoV33_bb.jpg)
-
-#### 跳線麵包板
-![](IMG_0383.jpg)
-
-#### pin腳
-![](pin.jpg)
-
-#### 開發板管理員
-![](boardManager.png)
-
-#### 程式庫管理員
-- wifi  
-![](wifinina.png)
-
-- 藍牙   
-![](arduinoBLE.png)
-
-- 陀螺儀和加速度計(LSM6DS3)  
-![](LSM6DS3.png)
+## 將Raspberry Pico W當作socked(建立控制網頁)
+1.[Socked建立方式](https://projects.raspberrypi.org/en/projects/get-started-pico-w/0)
 
 
