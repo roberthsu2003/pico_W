@@ -1,14 +1,3 @@
-# 當作Web Server
-
-1.[官方範例說明](https://projects.raspberrypi.org/en/projects/get-started-pico-w/0)
-
-- web_server.py
-- picozero.py
-- index.html
-
-#### web_server.py
-
-```
 import network
 import socket
 from time import sleep
@@ -89,36 +78,3 @@ try:
     server(connection)
 except KeyboardInterrupt:
     machine.reset()
-    
-
-
-```
-
-#### index.html
-
-```
-<!DOCTYPE html>
-<html>
-<body>
-    <form action="./lighton">
-    <input type="submit" value="Light on" />
-    </form>
-    
-    <form action="./lightoff">
-    <input type="submit" value="Light off" />
-    </form>
-    
-    <p>LED is {state}</p>
-    <p>Temperature is {temperature}</p>
-    
-</body>
-</html>
-
-```
-
-#### picozero.py
-
-- [手動下載](https://raw.githubusercontent.com/RaspberryPiFoundation/picozero/master/picozero/picozero.py?token=GHSAT0AAAAAABRLTKWZCT53CGKBFHMJGE54YSC762A)
-- 
-
-

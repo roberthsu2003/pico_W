@@ -99,7 +99,6 @@ Raspberry pico_W
 1. [收集資料，繪制圖表](https://github.com/roberthsu2003/smartHome/tree/master/%E4%BD%BF%E7%94%A8ThingSpeak)
 
 
-## 將Raspberry Pico W當作socked(建立控制網頁)
-1.[Socked建立方式](https://projects.raspberrypi.org/en/projects/get-started-pico-w/0)
+## [將Raspberry Pico W當作Web Server](./當作WebServer/)(建立控制網頁)
 
 
