@@ -47,6 +47,9 @@ Raspberry pico_W
 
 5. [xyz軸感測](https://github.com/roberthsu2003/smartHome/tree/master/%E4%B8%80%E8%88%AC%E6%93%8D%E4%BD%9C/5xyz%E8%BB%B8%E6%84%9F%E6%B8%AC)
 
+## [連線WiFi測試](./連線WiFi)
+ 
+
 
 ## Blynk網路服務
 ### [Blynk說明](./使用Blynk)
