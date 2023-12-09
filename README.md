@@ -6,7 +6,13 @@ Raspberry pico_W
 ![Raspberry pico_W2](./images/pick_w2.jpeg)
 ![Raspberry pico_W3](./images/pick_w3.jpeg)
 
-### [官方說明文件](https://www.raspberrypi.com/documentation/microcontrollers/raspberry-pi-pico.html#raspberry-pi-pico-w19)
+### [官方說明文件 pico W](https://www.raspberrypi.com/documentation/microcontrollers/raspberry-pi-pico.html#raspberry-pi-pico-w19)
+
+### [官方Getting Start](https://www.raspberrypi.com/documentation/microcontrollers/micropython.html)
+
+### [microPython for Rp2](https://docs.micropython.org/en/latest/rp2/general.html)
+
+### [pico Examples](https://github.com/raspberrypi/pico-micropython-examples/tree/master)
 
 ### 購買網址
 [pico主板](https://piepie.com.tw/product/raspberry-pi-pico-wh?hilite=pico)
