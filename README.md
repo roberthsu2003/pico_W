@@ -129,9 +129,8 @@ Raspberry pico_W
 1. [手機藍牙控制LED](https://github.com/roberthsu2003/smartHome/tree/master/%E4%BD%BF%E7%94%A8%E8%97%8D%E7%89%99/1led_control)
 
 ## IFTTT服務
-1. [Arduino-nano-33發送溫溼度訊息給line群組](./使用IFTTT/1dht11-nano33iot/)
+1. [使用GET傳送資料](./使用IFTTT/)
 
-2.[NodeMCU-32S V1.3 (CH340版本)發送溫溼度訊息給line群組](./使用IFTTT/1dht11-esp32/)
 
 
 ## ThingSpeak 服務
