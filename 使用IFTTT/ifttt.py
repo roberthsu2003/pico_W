@@ -67,5 +67,5 @@ while True:
             else:
                 print("連線失敗")
         
-        time.sleep(10)
+    time.sleep(5)
         

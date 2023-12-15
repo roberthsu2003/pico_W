@@ -238,7 +238,7 @@ while True:
             else:
                 print("連線失敗")
         
-        time.sleep(5)
+    time.sleep(5)
         
 
 ```
