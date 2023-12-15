@@ -1,39 +1,37 @@
-## Pico 有自帶計時器(硬體計時器)
+## Pico 有自帶實時時鐘
 
 
 ```
-From machine import Timer
+From machine import RTC
 ```
 
 ### 線路圖
 
 ![](./images/pic1.png)
 
-### 執行一次
+### 取得目前日期
 
 ```
-timer = Timer(period=5000, mode=Timer.ONE_SHOT, callback=lambda t:print(1))
+from machine import RTC
+
+#取得目前日期
+rtc = RTC()
+print(rtc.datetime())
+
+-------------------
+(2023, 12, 15, 4, 13, 32, 19, 0)
+2023年12月15日星期五,13點,32分,19秒
 ```
 
-### 持續執行
+### 自訂日期
 
 ```
-timer = Timer(period=1000, mode=Timer.PERIODIC, callback=lambda t:print(2))
+from machine import RTC
+rtc = RTC()
+rtc.datetime((2017,8,23,2,12,48,0,0))
+print(rtc.datetime())
+
+-------------
+(2017, 8, 23, 2, 12, 48, 1, 0)
 ```
 
-
-### 執行10次,然行停止執行
-
-```
-#執行10次,然後停止執行
-def run10(t):
-    global i
-    i += 1
-    if i==10:
-        t.deinit()
-    print(i)
-    
-i=1
-timer = Timer(period=1000, mode=Timer.PERIODIC, callback=lambda t:run10(t))
-timer = Timer(period=1000, mode=Timer.PERIODIC, callback=lambda t:print('一直執行'))
-```
