@@ -25,6 +25,8 @@ Raspberry pico_W
 
 ### [pico Examples](https://github.com/raspberrypi/pico-micropython-examples/tree/master)
 
+### [picozeor官網](https://picozero.readthedocs.io/en/latest/)
+
 ### 購買網址
 [pico主板](https://piepie.com.tw/product/raspberry-pi-pico-wh?hilite=pico)
 
@@ -44,6 +46,12 @@ Raspberry pico_W
 0_4. [內建LED](./一般操作/0_4內建LED)
 
 0_5. [內建溫度感測器(ADC)](./一般操作/0_5內建溫度感測器(ADC))
+
+0_6. [中斷_interrupt_IRQ](./一般操作/0_6中斷_interrupt_IRQ)
+
+0_7. [執行緒使用](./一般操作/0_7執行緒使用)
+
+0_8. [連線WiFi](./連線WiFi)
 
 ### 外接硬體
 
@@ -75,7 +83,7 @@ Raspberry pico_W
 
 5. [xyz軸感測](https://github.com/roberthsu2003/smartHome/tree/master/%E4%B8%80%E8%88%AC%E6%93%8D%E4%BD%9C/5xyz%E8%BB%B8%E6%84%9F%E6%B8%AC)
 
-## [連線WiFi測試](./連線WiFi)
+
  
 
 
