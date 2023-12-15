@@ -1,4 +1,5 @@
-## Pico 有自帶計時器
+## Pico 有自帶計時器(硬體計時器)
+
 
 ```
 From machine import Timer
