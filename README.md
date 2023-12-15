@@ -6,6 +6,17 @@ Raspberry pico_W
 ![Raspberry pico_W2](./images/pick_w2.jpeg)
 ![Raspberry pico_W3](./images/pick_w3.jpeg)
 
+### VSYS
+- min 1.8V,外部電源輸入
+- max 5.5V,外部電源輸入
+
+### VBUS 5V(+10%,-10%)來自於USB的電壓
+
+### 工作電壓 3.3V
+
+### 輸出電壓 3.3V
+
+
 ### [官方說明文件 pico W](https://www.raspberrypi.com/documentation/microcontrollers/raspberry-pi-pico.html#raspberry-pi-pico-w19)
 
 ### [官方Getting Start](https://www.raspberrypi.com/documentation/microcontrollers/micropython.html)
@@ -31,6 +42,8 @@ Raspberry pico_W
 0_3. [重新啟動](./一般操作/0_3重新啟動(WTD))
 
 0_4. [內建LED](./一般操作/0_4內建LED)
+
+0_5. [內建溫度感測器(ADC)](./一般操作/0_5內建溫度感測器(ADC))
 
 ### 外接硬體
 
