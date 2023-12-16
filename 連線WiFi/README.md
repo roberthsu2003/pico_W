@@ -2,6 +2,8 @@
 
 ## [資料來源](https://datasheets.raspberrypi.com/picow/connecting-to-the-internet-with-pico-w.pdf?_gl=1*19bgi4o*_ga*MTE3MTA5OTYzNy4xNzAxOTU5MTI2*_ga_22FD70LWDS*MTcwMjAwMDQzOS4yLjEuMTcwMjAwMTIzOC4wLjAuMA..)
 
+## [network套件官網文件](https://docs.micropython.org/en/latest/library/network.WLAN.html)
+
 ## [request官網文件](https://makeblock-micropython-api.readthedocs.io/en/latest/public_library/Third-party-libraries/urequests.html)
 
 ### 檢查是否可以連線,顯示連線資訊(wifi1.py)
@@ -12,7 +14,7 @@ import time
 
 wlan = network.WLAN(network.STA_IF)
 wlan.active(True)
-wlan.connect('Robert_iPhone','0926656000')
+wlan.connect('Robert_iPhone','0926656')
 
 while not wlan.isconnected() and wlan.status() >= 0:
     print("Waiting to connect:")
