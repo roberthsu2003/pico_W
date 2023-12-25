@@ -19,6 +19,10 @@ def task(n, delay):
     print('done')
 
 _thread.start_new_thread(task, (10, 0.5))
+
+while True:    
+    print("true")
+    time.sleep(1)
 ```
 
 
