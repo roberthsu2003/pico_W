@@ -59,6 +59,8 @@ Raspberry pico_W
 
 1_1. [按鈕-LED-蜂鳴器](./一般操作/1_1_1按鈕_LED_蜂鳴器) 
 
+1_2. [PWM控制LED](./一般操作/1_1_2_PWM控制LED)
+
 
 ## Blynk網路服務
 ### [Blynk說明](./使用Blynk)
