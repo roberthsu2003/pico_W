@@ -6,6 +6,12 @@ Raspberry pico_W
 ![Raspberry pico_W2](./images/pick_w2.jpeg)
 ![Raspberry pico_W3](./images/pick_w3.jpeg)
 
+### pin腳圖
+
+![](./images/raspberry_pi_pico_w.png)
+
+> 圖片出處 - https://swf.com.tw/?p=1858
+
 ### VSYS
 - min 1.8V,外部電源輸入
 - max 5.5V,外部電源輸入
@@ -62,6 +68,10 @@ Raspberry pico_W
 1_3. [可變電阻控制LED](./一般操作/1_1_3_可變電阻控制LED)
 
 2_1. [按鈕-LED-蜂鳴器](./一般操作/2_1按鈕_LED_蜂鳴器) 
+
+2_1 [防盜器-人體紅外線感應模組](./一般操作/2_2防盜器)
+
+2_2 [傾斜開關](./一般操作/2_3傾斜滾珠開關)
 
 
 ## Blynk網路服務
