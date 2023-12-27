@@ -59,6 +59,8 @@ Raspberry pico_W
 
 0_8. [連線WiFi](./連線WiFi)
 
+0_9. [成為WebServer_並且建立控制網頁](./當作WebServer/)
+
 ### 外接硬體
 
 1_1. [按鈕-下接電阻](./一般操作/1_1_0按鈕和LED/)
@@ -112,6 +114,6 @@ Raspberry pico_W
 1. [收集資料，繪制圖表](https://github.com/roberthsu2003/smartHome/tree/master/%E4%BD%BF%E7%94%A8ThingSpeak)
 
 
-## [將Raspberry Pico W當作Web Server](./當作WebServer/)(建立控制網頁)
+
 
 
