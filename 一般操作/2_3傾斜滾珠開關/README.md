@@ -42,7 +42,7 @@ from machine import Timer
 
 
 led = Pin(15,Pin.OUT)
-tilt_switch = Pin(16, Pin.IN, Pin.PULL_UP) # 上接電阻
+tilt_switch = Pin(16, Pin.IN, Pin.PULL_UP) # 上拉電阻
 
 def check_tilt(t:Timer):
     tilt_value = tilt_switch.value()
