@@ -77,6 +77,8 @@ Raspberry pico_W
 
 2_3 [雙軸xy搖桿組](./一般操作/2_4雙軸xy搖桿組)
 
+## IFTTT服務
+1. [使用GET傳送資料](./使用IFTTT/)
 
 ## Blynk.Console 服務
 ### [Blynk.Console 說明](./使用Blynk_Console/)
@@ -104,9 +106,6 @@ Raspberry pico_W
 
 ## LihgtBlue手機藍牙app
 1. [手機藍牙控制LED](https://github.com/roberthsu2003/smartHome/tree/master/%E4%BD%BF%E7%94%A8%E8%97%8D%E7%89%99/1led_control)
-
-## IFTTT服務
-1. [使用GET傳送資料](./使用IFTTT/)
 
 
 
