@@ -1,5 +1,0 @@
-#define BLYNK_TEMPLATE_ID "TMPLPT3cTHDx"
-#define BLYNK_DEVICE_NAME "Lights"
-#define BLYNK_AUTH_TOKEN "8ClqPylXAfjEPAUBWpZu0Eb3pIB8bfMU"
-#define ID "Robert_iPhone"
-#define PASS "0926656000"
