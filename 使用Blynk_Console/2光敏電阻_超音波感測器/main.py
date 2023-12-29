@@ -1,4 +1,4 @@
-BLYNK_AUTH_TOKEN = "m3lzNZz057usW_Yu5BDM7nUsF-0V7Bxi"
+BLYNK_AUTH_TOKEN = "自已的token"
 
 from tools import connect,reconnect
 import urequests as requests

@@ -64,17 +64,24 @@
 ![](./images/pic1.png)
 
 
+### 程式碼
+
+Main.py
 
 ```micro python
-from machine import Pin
+BLYNK_AUTH_TOKEN = "自已的Code"
+
+from tools import connect,reconnect
+import urequests as requests
+from machine import Pin,ADC,Timer
 import utime
 
-
+adc_light = ADC(Pin(28))
 trigger = Pin(16, Pin.OUT)
 echo = Pin(17, Pin.IN)
+connect()
 
-def ultra():         #建立一個函式
-   print('執行')
+def ultra()->float:      #建立一個函式
    utime.sleep_us(2)  #暫停兩微秒，確保上一個設定低電位已經完成
    trigger.high()
    utime.sleep_us(10)  #拉高電位後，等待10微秒後，立即設定為低電位
@@ -85,11 +92,104 @@ def ultra():         #建立一個函式
        signalon = utime.ticks_us()  
    timepassed = signalon - signaloff    #計算發送與接收時間差
    distance = (timepassed * 0.0343) / 2  #聲波行進時間 x 聲速(343.2 m/s，即每微秒0.0343公分)，來回距離再除以2  
-   print("The distance is ： ",distance,"cm")
+   return distance
+   
+def lightSensor()->float:
+    light_value = adc_light.read_u16()
+    return light_value
 
-while True:
-   ultra()
-   utime.sleep(1)  #等待1秒
+
+   
+def callback1(t:Timer):
+    distance = ultra()
+    light_value = lightSensor()
+    
+    #不要使用https呼叫,沒有傳出值
+    #更新V0->distance
+    #更新V1->light
+    print(distance)
+    print(light_value)
+    
+    url = f'https://blynk.cloud/external/api/batch/update?token={BLYNK_AUTH_TOKEN}&v0={distance}&v1={light_value}'
+    try:        
+        response = requests.get(url)
+        print("text")
+        print("送出資料")
+    except:
+        reconnect()
+    else:
+        print("server接收") #但要檢查status_code,是否回應成功        
+        if response.status_code == 200:
+            print("成功傳送,status_code==200")
+        else:
+            print("server回應有問題")
+            print(f'status_code:{response.status_code}')
+           
+        
+        response.close()
+        
+time1 = Timer()
+time1.init(period=5000,callback=callback1)
 
 ```
+
+tools.py
+
+```python
+import network
+import urequests as requests
+import time
+
+#ssid = 'Robert_iPhone'
+#password = '0926656000'
+
+ssid = 'robertHome'
+password = '0926656000'
+
+wlan = network.WLAN(network.STA_IF)
+wlan.active(True)
+wlan.connect(ssid, password)
+
+def connect():  
+
+    #等待連線或失敗
+    #status=0,1,2正在連線
+    #status=3連線成功
+    #<1,>=3失敗的連線
+    max_wait = 10    
+
+    while max_wait > 0:
+        status = wlan.status()
+        if status < 0 or status >= 3:
+            break
+        max_wait -= 1
+        print("等待連線")
+        time.sleep(1)
+
+    #處理錯誤
+    if wlan.status() != 3:
+        print('連線失敗')
+        raise RuntimeError('連線失敗')
+    else:
+        print('連線成功')
+        status = wlan.ifconfig()
+        print(f'ip={status[0]}') 
+        
+        
+def reconnect():
+    while True:
+        print(f"無法連線({wlan.status()})")
+        if wlan.status() < 0 or wlan.status() >= 3:
+            print("嘗試重新連線")
+            wlan.disconnect()
+            wlan.connect(ssid, password)
+            if wlan.status() == 3:
+                print("連線成功")
+                break
+            else:
+                print("連線失敗")
+        time.sleep(1)
+
+```
+
 
