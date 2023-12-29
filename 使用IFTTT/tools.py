@@ -1,11 +1,14 @@
-import time
 import network
 import urequests as requests
 
-def connecte()
-    ssid = 'Robert_iPhone'
-    password = '0926656000'
+ssid = 'Robert_iPhone'
+password = '0926656000'
 
+wlan = network.WLAN(network.STA_IF)
+wlan.active(True)
+wlan.connect(ssid, password)
+
+def connecte():
     wlan = network.WLAN(network.STA_IF)
     wlan.active(True)
     wlan.connect(ssid, password)
@@ -14,7 +17,6 @@ def connecte()
     #status=0,1,2正在連線
     #status=3連線成功
     #<1,>=3失敗的連線
-
     max_wait = 10    
 
     while max_wait > 0:
@@ -32,3 +34,5 @@ def connecte()
         print('連線成功')
         status = wlan.ifconfig()
         print(f'ip={status[0]}')
+        
+
