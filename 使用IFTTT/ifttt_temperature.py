@@ -2,7 +2,7 @@ from tools import connect,reconnect
 import time
 import urequests as requests
 
-send:bool = True
+
 
 # urequests官方網址
 # https://makeblock-micropython-api.readthedocs.io/en/latest/public_library/Third-party-libraries/urequests.html

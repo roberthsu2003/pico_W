@@ -1,5 +1,6 @@
 import network
 import urequests as requests
+import time
 
 ssid = 'Robert_iPhone'
 password = '0926656000'
@@ -8,7 +9,7 @@ wlan = network.WLAN(network.STA_IF)
 wlan.active(True)
 wlan.connect(ssid, password)
 
-def connecte():
+def connect()->tuple[int,str]:
     wlan = network.WLAN(network.STA_IF)
     wlan.active(True)
     wlan.connect(ssid, password)
@@ -29,10 +30,30 @@ def connecte():
 
     #處理錯誤
     if wlan.status() != 3:
+        print('連線失敗')
         raise RuntimeError('連線失敗')
     else:
         print('連線成功')
         status = wlan.ifconfig()
-        print(f'ip={status[0]}')
+        print(f'ip={status[0]}') 
         
+        
+def reconnect():
+    while True:
+        print(f"無法連線({wlan.status()})")
+        if wlan.status() < 0 or wlan.status() >= 3:
+            print("嘗試重新連線")
+            wlan.disconnect()
+            wlan.connect(ssid, password)
+            if wlan.status() == 3:
+                print("連線成功")
+                break
+            else:
+                print("連線失敗")
+        time.sleep(1)
+        
+
+        
+
+
 
