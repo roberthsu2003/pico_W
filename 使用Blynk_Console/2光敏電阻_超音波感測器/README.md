@@ -1,5 +1,11 @@
 # HC-SR04超音波測距模組_光敏電阻
 
+
+
+## 影片展示
+[![](https://img.youtube.com/vi/HT5KaSnDzY4/2.jpg)](https://youtu.be/HT5KaSnDzY4)
+
+
 - ### 超音波模組工作原理
 
 	- 採用I/O觸發測距，給至少為10us的高電位信號
@@ -36,7 +42,22 @@
 - utime.sleep_us(n)：延遲 n 微秒，應為正數或 0
 - utime.ticks_us()：使其包含以微秒為單位的時間戳。
 
+## Blynk建立流程
 
+#### 1. 建立Template
+- V0 -> distance
+- V1 -> light
+- 
+#### 2. 建立Device
+- 因為使用的是RESTful的連線,最重要是是token的密碼
+
+#### 3.使用VSCode thunder client 測試
+
+#### 4. 程式
+
+- [RESTful的說明](https://docs.blynk.io/en/blynk.cloud/device-https-api)
+
+- 此程式一次改變2個值,使用此 Blynk的API(Update Multiple Datastreams Simultaneously)
 
 ### 線路圖
 
