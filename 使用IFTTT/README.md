@@ -108,7 +108,7 @@ connect()
 
 while True:
     #取得sensor的資料  
-    url = 'https://maker.ifttt.com/trigger/receive_notify/with/key/eDqcZfqY_i_BHCZVXCwb6aq7GLPKpdV4q1ePja35Mjq?value1=90&value2=100&value3=110'
+    url = 'https://maker.ifttt.com/trigger/receive_notify/with/key/您的key?value1=90&value2=100&value3=110'
     #使用try/except傳送資料
     
     if(send):
@@ -216,7 +216,7 @@ def alert(temperature:float):
     timeString:str = f"{t[0]}-{t[1]}-{t[2]} | {t[4]}:{t[5]}:{t[6]}"
     value1 = timeString
     value2 = temperature
-    url = f'https://maker.ifttt.com/trigger/receive_notify/with/key/eDqcZfqY_i_BHCZVXCwb6aq7GLPKpdV4q1ePja35Mjq?value1={value1}&value2={value2}'
+    url = f'https://maker.ifttt.com/trigger/receive_notify/with/key/您的key?value1={value1}&value2={value2}'
     try:  
             print("送出資料")
             response = requests.request('GET',url)

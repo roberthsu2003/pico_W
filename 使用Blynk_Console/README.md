@@ -5,6 +5,9 @@
 - 使用手機遠端控制和監控裝置
 - 遠端更新裝置
 
+## 使用HTTP RESTful API 溝通Blynk
+- [官方說明網址](https://docs.blynk.io/en/getting-started/how-to-display-any-sensor-data-in-blynk-app#2.-using-https-rest-api)
+
 
 
 ### 1. 登入https://Blynk.io
