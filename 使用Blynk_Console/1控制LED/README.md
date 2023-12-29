@@ -1,4 +1,8 @@
 # LEDControl和Blynk
+
+## 影片展示
+[![](https://img.youtube.com/vi/aAXGrstXzn0/2.jpg)](https://youtu.be/aAXGrstXzn0)
+
 ## 學習讓 pico_W 和 Blynk
 ### 線路圖
 ![](./images/pic1.png)
@@ -126,7 +130,5 @@ def reconnect():
 
 
 
-### Blynk.Console LED控制影片
-[![](https://img.youtube.com/vi/MkD5o0SpPLg/2.jpg)](https://youtu.be/MkD5o0SpPLg)
 
 
