@@ -1,7 +1,5 @@
 # HC-SR04超音波測距模組_光敏電阻
 
-
-
 ## 影片展示
 [![](https://img.youtube.com/vi/HT5KaSnDzY4/2.jpg)](https://youtu.be/HT5KaSnDzY4)
 

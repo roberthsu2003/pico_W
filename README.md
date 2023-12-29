@@ -88,6 +88,7 @@ Raspberry pico_W
 ### [Blynk.Console 說明](./使用Blynk_Console/)
 
 1. [控制LED](./使用Blynk_Console/1控制LED/)
+2. [光敏電阻_超音波感測器](./使用Blynk_Console/2光敏電阻_超音波感測器)
 
 
 
