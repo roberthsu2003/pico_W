@@ -1,4 +1,10 @@
+## 連線ifttt
+
+### 範例1(使用get_只傳送一次)
+
+
 ```
+
 import time
 import network
 import urequests as requests
@@ -42,30 +48,45 @@ while True:
     url = 'https://maker.ifttt.com/trigger/receive_notify/with/key/自已的key?value1=90&value2=100&value3=110'
     
     #使用try/except傳送資料
-    try:
-        f(send):
-            send = False
-            print("送出資料")
-            try:
-                response = requests.request('GET',url)
-            except:
-                print("傳送失敗")
+    
+    if(send):
+        send = False
+        print("送出資料")
+        try:
+            response = requests.request('GET',url)
+        except:
+            print(f"無法連線({wlan.status()})")
+            if wlan.status() < 0 or wlan.status() > 3:
+                print("嘗試重新連線")
+                wlan.disconnect()
+                wlan.connect(ssid, password)
+                if wlan.status() == 3:
+                    print("連線成功")
+                else:
+                    print("連線失敗")
+        else:
+            print("server接收") #但要檢查status_code,是否回應成功
+            if response.status_code == 200:
+                print("成功傳送,status_code==200")
             else:
-                print("送出成功")
-                print(f"sent({response.status_code}), status={wlan.status()}")
+                print("server回應有問題")
+                print(f'status_code:{response.status_code}')
+        finally:
             response.close()
             
-    except:
-        print(f"無法連線({wlan.status()})")
-        if wlan.status() < 0 or wlan.status() >= 3:
-            print("嘗試重新連線")
-            wlan.disconnect()
-            wlan.connect(ssid, password)
-            if wlan.status() == 3:
-                print("連線成功")
-            else:
-                print("連線失敗")
+    
+        
         
     time.sleep(10)
- ```      
+
+ ```  
+ 
+ 
+### 範例2(使用get)
+ 
+- 使用module
+- 只傳送一次
+
+```
+```    
 

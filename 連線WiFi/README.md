@@ -230,8 +230,8 @@ while True:
         print(f"sent({response.status_code}), status={wlan.status()}")
         response.close()
     except:
-        print(f"無法連線({wlan.status()})")
-        if wlan.status() < 0 or wlan.status() >= 3:
+        print(f"無法傳送資料({wlan.status()})")
+        if wlan.status() < 0 or wlan.status() > 3:
             print("嘗試重新連線")
             wlan.disconnect()
             wlan.connect(ssid, password)
