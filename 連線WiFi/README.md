@@ -176,7 +176,7 @@ r.close() #一定要close
 
 ```
 
-### http response - 最完整的連線方式
+### http response - 最完整的連線方式-1個py檔案的方式的方式
 
 - http request
 - 傳送sensor資料
