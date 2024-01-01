@@ -1,4 +1,7 @@
 # Raspberry Pico_W
+
+> project1資料夾,自動同步Server,不可以刪除
+
 ## 硬體設備
 ### 主要設備:
 Raspberry pico_W
