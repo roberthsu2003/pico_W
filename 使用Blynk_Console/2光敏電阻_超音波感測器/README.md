@@ -139,6 +139,11 @@ tools.py
 import network
 import urequests as requests
 import time
+import rp2
+from machine import WDT
+
+rp2.country('TW')
+
 
 #ssid = 'Robert_iPhone'
 #password = '0926656000'
@@ -149,6 +154,7 @@ password = '0926656000'
 wlan = network.WLAN(network.STA_IF)
 wlan.active(True)
 wlan.connect(ssid, password)
+wlan.config(pm = 0xa11140)
 
 def connect():  
 
@@ -168,8 +174,10 @@ def connect():
 
     #處理錯誤
     if wlan.status() != 3:
-        print('連線失敗')
-        raise RuntimeError('連線失敗')
+        print('連線失敗,重新開機')
+        #raise RuntimeError('連線失敗')
+        wdt = WDT(timeout=2000)
+        wdt.feed()
     else:
         print('連線成功')
         status = wlan.ifconfig()
@@ -177,19 +185,14 @@ def connect():
         
         
 def reconnect():
-    while True:
+    if wlan.status() == 3: #還在連線,只是傳送的server無回應
         print(f"無法連線({wlan.status()})")
-        if wlan.status() < 0 or wlan.status() >= 3:
-            print("嘗試重新連線")
-            wlan.disconnect()
-            wlan.connect(ssid, password)
-            if wlan.status() == 3:
-                print("連線成功")
-                break
-            else:
-                print("連線失敗")
-        time.sleep(1)
-
+        return
+    else:
+        print("嘗試重新連線")
+        wlan.disconnect()
+        wlan.connect(ssid, password)
+        connect()
 ```
 
 

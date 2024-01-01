@@ -99,7 +99,7 @@ Raspberry pico_W
 
 
 
-#### 1. [光敏電阻_超音波感測器](./實際案例/光敏電阻_超音波感測器)
+#### 1. [光敏電阻_超音波感測器](./project1/)
 - 建立Web API(fastAPI)
 - 雲端資料庫(redis)
 - 建立Web Server(streamlit)
