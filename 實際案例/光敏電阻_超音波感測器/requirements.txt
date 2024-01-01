@@ -1,7 +1,0 @@
-fastapi
-uvicorn[standard]
-redis
-python-dotenv
-streamlit
-requests
-streamlit-autorefresh
