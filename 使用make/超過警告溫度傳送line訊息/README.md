@@ -1,41 +1,41 @@
 ## 超過警告溫度傳送line訊息
 - 符合條件,每60秒送給ifttt一次
 - 傳出現在時間和溫度
+- queryParamater必需先設定並先執行一次,讓maker預先知道您要的**query參數**的名稱
+	- name=我家雞場&date=今天&temperature=54.367
 
 ```
-from tools import connect,reconnect
-import time
 import urequests as requests
-from machine import ADC,Timer,RTC
+from tools import connect,reconnect
+from machine import WDT,Timer,ADC,RTC
+import time
 
 
-# urequests官方網址
-# https://makeblock-micropython-api.readthedocs.io/en/latest/public_library/Third-party-libraries/urequests.html
-
-def alert(temperature:float):
+def alert(t:float):
     print('要爆炸了!')
     rtc = RTC()
-    t = rtc.datetime()
-    timeString:str = f"{t[0]}-{t[1]}-{t[2]} | {t[4]}:{t[5]}:{t[6]}"
-    value1 = timeString
-    value2 = temperature
-    url = f'https://maker.ifttt.com/trigger/receive_notify/with/key/您的key?value1={value1}&value2={value2}'
-    try:  
-        print("送出資料")
-        response = requests.request('GET',url)
+    date_tuple = rtc.datetime()
+    year = date_tuple[0]
+    month = date_tuple[1]
+    day = date_tuple[2]
+    hour = date_tuple[4]
+    minites = date_tuple[5]
+    second = date_tuple[6]
+    date_str = f'{year}-{month}-{day} {hour}:{minites}:{second}'
+    get_url = f'https://hook.us1.make.com/自已的token?name=我家雞場&date={date_str}&temperature={t}'
+    try:
+        response = requests.get(get_url)
     except:
-        #如果出錯response是不會產生的
         reconnect()
     else:
-        print("server接收") #但要檢查status_code,是否回應成功
         if response.status_code == 200:
-            print("成功傳送,status_code==200")
+            print("傳送成功")
         else:
-            print("server回應有問題")
+            print("server有錯誤訊息")
             print(f'status_code:{response.status_code}')
-        response.close()        
-        
-
+        response.close()
+    
+    
 def callback1(t:Timer):
     global start
     sensor = ADC(4)    
@@ -45,16 +45,16 @@ def callback1(t:Timer):
     delta = time.ticks_diff(time.ticks_ms(), start)
     print(delta)
     #溫度超過24度,並且發送alert()的時間已經大於60秒
-    if temperature >= 25 and delta >= 60 * 1000:        
+    if temperature >= 24 and delta >= 60 * 1000:        
         alert(temperature)
         start = time.ticks_ms()#重新設定計時的時間
+        
 
-adc = machine.ADC(26)
-connect()        
-start = time.ticks_ms() - 60 * 1000 #應用程式啟動時,計時時間,先減60秒
+connect()       
+
+start = time.ticks_ms() - 60 * 1000 #應用程式啟動時,計時時間,先減60秒    
 time1 = Timer()
 time1.init(period=1000,callback=callback1)
-
 
 ```
 
@@ -62,19 +62,20 @@ time1.init(period=1000,callback=callback1)
 
 ```
 import network
-import urequests as requests
 import time
 import rp2
 from machine import WDT
 
 rp2.country('TW')
 
+ssid = '自已的帳號'
+password = '自已的密碼'
 
 #ssid = 'Robert_iPhone'
 #password = '0926656000'
 
-ssid = 'robertHome'
-password = '0926656000'
+#ssid = 'robertHome'
+#password = '0926656000'
 
 wlan = network.WLAN(network.STA_IF)
 wlan.active(True)
@@ -117,6 +118,5 @@ def reconnect():
         print("嘗試重新連線")
         wlan.disconnect()
         wlan.connect(ssid, password)
-        connect()
-        
+        connect()        
 ```

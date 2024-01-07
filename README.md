@@ -86,9 +86,9 @@ Raspberry pico_W
 
 2_6 [光敏電阻](./一般操作/2_6光敏電阻)
 
-## IFTTT服務
-1. [使用GET傳送資料給ifttt](./使用IFTTT/)
-2. [超過警告溫度傳送line訊息](./使用IFTTT/超過警告溫度傳送line訊息/)
+## make.com服務
+1. [使用GET傳送資料給](./使用make/)
+2. [超過警告溫度傳送line訊息](./使用make/超過警告溫度傳送line訊息/)
 
 ## Blynk.Console 服務
 ### [Blynk.Console 說明](./使用Blynk_Console/)
