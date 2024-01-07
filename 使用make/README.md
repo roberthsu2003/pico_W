@@ -1,4 +1,22 @@
-## 連線ifttt
+## 連線make.com
+### webhook設定要注意的地方
+1. 取得您的網址和token
+
+ ![](./images/pic1.png)
+ 
+2. 告知query參數的參數名稱
+
+![](./images/pic2.png)
+
+3. 確定webhook已經知道
+
+![](./images/pic3.png)
+
+
+### line內容顯示格式設定
+
+![](./images/pic4.png)
+
 
 ### 範例1
 - 使用get
@@ -12,8 +30,8 @@ import time
 import network
 import urequests as requests
 
-ssid = 'Robert_iPhone'
-password = '0926656000'
+ssid = '自已手機'
+password = '自已手機'
 
 wlan = network.WLAN(network.STA_IF)
 wlan.active(True)
@@ -48,7 +66,7 @@ else:
 
 while True:
     #取得sensor的資料  
-    url = 'https://maker.ifttt.com/trigger/receive_notify/with/key/自已的key?value1=90&value2=100&value3=110'
+    url = 'https://hook.us1.make.com/自已的token?name=我家雞場&date=今天&temperature=24.368'
     
     #使用try/except傳送資料
     
@@ -91,7 +109,7 @@ while True:
 - 使用tools module
 - 只傳送一次
 
-### ifttt_module
+### make_module
 
 ```
 from tools import connect,reconnect
@@ -108,7 +126,7 @@ connect()
 
 while True:
     #取得sensor的資料  
-    url = 'https://maker.ifttt.com/trigger/receive_notify/with/key/您的key?value1=90&value2=100&value3=110'
+    url = 'https://hook.us1.make.com/自已的token?name=我家雞場&date=今天&temperature=24.368'
     #使用try/except傳送資料
     
     if(send):
@@ -137,19 +155,20 @@ while True:
 
 ```
 import network
-import urequests as requests
 import time
 import rp2
 from machine import WDT
 
 rp2.country('TW')
 
+ssid = '自已的帳號'
+password = '自已的密碼'
 
 #ssid = 'Robert_iPhone'
 #password = '0926656000'
 
-ssid = 'robertHome'
-password = '0926656000'
+#ssid = 'robertHome'
+#password = '0926656000'
 
 wlan = network.WLAN(network.STA_IF)
 wlan.active(True)
@@ -175,9 +194,9 @@ def connect():
     #處理錯誤
     if wlan.status() != 3:
         print('連線失敗,重新開機')
-        #raise RuntimeError('連線失敗')
-        wdt = WDT(timeout=2000)
-        wdt.feed()
+        raise RuntimeError('連線失敗')
+        #wdt = WDT(timeout=2000)
+        #wdt.feed()
     else:
         print('連線成功')
         status = wlan.ifconfig()
@@ -192,8 +211,7 @@ def reconnect():
         print("嘗試重新連線")
         wlan.disconnect()
         wlan.connect(ssid, password)
-        connect()
-          
+        connect()          
 ```
 
 
