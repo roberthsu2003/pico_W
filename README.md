@@ -64,7 +64,7 @@ Raspberry pico_W
 
 0_10. [連線WiFi-使用module-必用](./當作WebServer/module方式)
 
-0_11. [成為WebServer_並且建立控制網頁](./當作WebServer/module方式)
+0_11. [成為WebServer_並且建立控制網頁](./當作WebServer)
 
 ### 外接硬體
 
