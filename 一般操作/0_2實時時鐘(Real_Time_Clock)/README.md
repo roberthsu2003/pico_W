@@ -2,7 +2,7 @@
 
 
 ```
-From machine import RTC
+from machine import RTC
 ```
 
 ### 線路圖
@@ -24,7 +24,7 @@ print(rtc.datetime())
 ```
 
 ### 自訂日期
-#### 為何要自訂及時時間?
+#### 為何要自訂即時時間?
 - RTC的時間是取得電腦的時間(當電腦連線時是正常的現在日期和時間)
 - 當單獨運作時(無連接電腦,所以要透過RTC sensor,或wifi取得目前的時間)
 
