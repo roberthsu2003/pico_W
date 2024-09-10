@@ -2,7 +2,7 @@
 
 
 ```
-From machine import Timer
+from machine import Timer
 ```
 
 ### 線路圖
