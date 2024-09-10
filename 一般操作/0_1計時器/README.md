@@ -12,12 +12,14 @@ from machine import Timer
 ### 執行一次
 
 ```
+from machine import Timer
 timer = Timer(period=5000, mode=Timer.ONE_SHOT, callback=lambda t:print(1))
 ```
 
 ### 持續執行
 
 ```
+from machine import Timer
 timer = Timer(period=1000, mode=Timer.PERIODIC, callback=lambda t:print(2))
 ```
 
@@ -25,6 +27,7 @@ timer = Timer(period=1000, mode=Timer.PERIODIC, callback=lambda t:print(2))
 ### 執行10次,然行停止執行
 
 ```
+from machine import Timer
 #執行10次,然後停止執行
 def run10(t):
     global i
