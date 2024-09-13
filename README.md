@@ -38,7 +38,7 @@ Raspberry pico_W
 
 ### 2-5 [picozeor官網](https://picozero.readthedocs.io/en/latest/)
 
-## 3. 套綿購買網址
+## 3. 套件購買網址
 - ### [pico主板](https://piepie.com.tw/product/raspberry-pi-pico-wh?hilite=pico)
 
 - ### [工具套件](https://piepie.com.tw/product/gpio-game-console-starter-kit)
@@ -88,7 +88,7 @@ Raspberry pico_W
 
 #### 4-2-9 [光敏電阻](./一般操作/2_6光敏電阻)
 
-## 5. 雲端服數
+## 5. 雲端服務
 
 ### 5-1 make.com服務
 
@@ -110,9 +110,6 @@ Raspberry pico_W
 
 
 ## 6. 實際案例
-
-
-
 #### 6-1. [光敏電阻_超音波感測器](./project1/)
 - 建立Web API(fastAPI)
 - 雲端資料庫(redis)
