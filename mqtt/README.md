@@ -4,5 +4,5 @@
 3. [**MQTT Bloker安裝(windows)**](./windows安裝)
 4. [**python操作MQTT**](./python操作MQTT)
 5. [**micro_pytnon操作MQTT**](./micropython操作MQTT)
-6. [**window安裝explore**](./windows安裝explore)
+6. [**windows安裝explore**](./windows安裝explore)
 
