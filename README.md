@@ -43,7 +43,7 @@ Raspberry pico_W
  
 ### 3-1 [上課相關零件](./周邊零件/README.md)
 
-## 4. [MQTT Server￼](./mqtt)
+## 4. [MQTT Server￼](./mqtt/)
 
 ## 5. 一般操作
 ### 5-1 內建硬體
