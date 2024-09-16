@@ -109,6 +109,11 @@ password_file /etc/mosquitto/pwfile
 mosquitto_sub -d -h localhost -t test/topic
 ```
 
+```bash
+#代表訂閱`test/#`後面所有的topic
+mosquitto_sub -d -h localhost -t test/#
+```
+
 **2. 發佈訂閱主題如下：**
 
 ```bash
@@ -128,7 +133,7 @@ Hello,Mosquitto!
 **1. 訂閱主題終端機如下：**
 
 ```bash
-mosquitto_sub -d -h localhost -t test/topic
+mosquitto_sub -d -h localhost -u username -P password -t test/topic
 ```
 
 **2. 發佈訂閱主題如下：**
