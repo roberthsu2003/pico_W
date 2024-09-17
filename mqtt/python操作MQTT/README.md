@@ -60,21 +60,21 @@ def on_connect(client, userdata, flags, rc,properties=None):
 
 
 if __name__ == '__main__':
-		#必需使用VERSION2,VERSION1已經Deprecation
-    client = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2)
-    client.on_message = on_message
-    client.on_connect = on_connect
-    
-    # Set user ID and password
+	#必需使用VERSION2,VERSION1已經Deprecation
+	client = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2)
+	client.on_message = on_message
+	client.on_connect = on_connect
+	
+	# Set user ID and password
 		client.username_pw_set("your_user_id", "your_password")
-
+	
 		#SSL連線
-    #client.tls_set('root.ca', certfile='c1.crt', keyfile='c1.key')
-    
-    # Connect to the broker (replace 'broker_address' with the address of your MQTT broker)
-    client.connect("127.0.0.1", 1883, 60)
+	#client.tls_set('root.ca', certfile='c1.crt', keyfile='c1.key')
+	
+	# Connect to the broker (replace 'broker_address' with the address of your MQTT broker)
+	client.connect("127.0.0.1", 1883, 60)
 
 
 
-    client.loop_forever()
+	client.loop_forever()
 ```
