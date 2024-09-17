@@ -5,11 +5,11 @@
 pip install paho-mqtt
 ```
 
-#### 9-2.￼程式碼
+#### 9-2. 程式碼
 
 - [mqtt範例網站](https://github.com/roppert/mosquitto-python-example)
 
-#### 9-2-1 發佈的程式碼￼
+#### 9-2-1 發佈的程式碼
 
 ```
 
