@@ -66,7 +66,7 @@ if __name__ == '__main__':
 	client.on_connect = on_connect
 	
 	# Set user ID and password
-		client.username_pw_set("your_user_id", "your_password")
+	client.username_pw_set("your_user_id", "your_password")
 	
 	#SSL連線
 	#client.tls_set('root.ca', certfile='c1.crt', keyfile='c1.key')
