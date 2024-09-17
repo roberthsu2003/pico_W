@@ -66,7 +66,7 @@ print("Connected to WiFi")
 mqtt_host = "io.adafruit.com"
 mqtt_username = ""  # Your Adafruit IO username
 mqtt_password = ""  # Adafruit IO Key
-mqtt_publish_topic = ""  # The MQTT topic for your Adafruit IO Feed
+mqtt_publish_topic = ""  # The MQTT topic for your Adafruit IO Feed,使用FeedInfo內產生的key
 
 # Enter a random ID for this MQTT Client
 # It needs to be globally unique across all of Adafruit IO.
@@ -102,3 +102,6 @@ except Exception as e:
 finally:
     mqtt_client.disconnect()
 ```
+
+![](./images/pic7.png)
+

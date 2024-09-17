@@ -105,7 +105,7 @@ Raspberry pico_W
 ## 6-3 MQTT Bloker 雲端服務
 ### 6-3-1 Adafruit IO
 #### 6-3-1-1 [Adafruit IO](./AdafruitIO/)
-### 6-3-2 [HiveMQ](https://www.hivemq.com/mqtt/public-mqtt-broker/)
+
 
 
 ## 7. 實際案例
