@@ -54,7 +54,7 @@ def on_message(mosq, obj, msg):
 def on_connect(client, userdata, flags, rc,properties=None):
     print(f"Connected with result code {rc}")
     # Subscribe to the topic once connected
-    client.subscribe("your/topic", qos=2)
+    client.subscribe("your/topic")
     
 
 
