@@ -104,13 +104,12 @@ Raspberry pico_W
 
 ## 6-3 MQTT Bloker 雲端服務
 ### 6-3-1 Adafruit IO
-#### 6-3-1-1 [Adafruit IO 說明](https://core-electronics.com.au/guides/getting-started-with-mqtt-on-raspberry-pi-pico-w-connect-to-the-internet-of-things/#adafruit-io)
-
+#### 6-3-1-1 [Adafruit IO](./AdafruitIO/)
 ### 6-3-2 [HiveMQ](https://www.hivemq.com/mqtt/public-mqtt-broker/)
 
 
 ## 7. 實際案例
-#### 7-1. [光敏電阻_超音波感測器](./project1/)
+#### 7-1. [光敏電阻_超音波感測器](./實際案例/project1/)
 - 建立Web API(fastAPI)
 - 雲端資料庫(redis)
 - 建立Web Server(streamlit)
