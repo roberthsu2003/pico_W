@@ -43,7 +43,14 @@ Raspberry pico_W
  
 ### 3-1 [上課相關零件](./周邊零件/README.md)
 
-## 4. [MQTT Server](./mqtt/)
+## 4. MQTT
+1. [**MQTT說明**](./mqtt/MQTT說明)
+2. [**MQTT Bloker安裝(Linux)**](./mqtt/linux安裝)
+3. [**MQTT Bloker安裝(windows)**](./mqtt/windows安裝)
+4. [**python操作MQTT**](./mqtt/python操作MQTT)
+5. [**micro_pytnon操作MQTT**](./mqtt/micropython操作MQTT)
+6. [**windows安裝explore**](./mqtt/windows安裝explore)
+
 
 ## 5. 一般操作
 ### 5-1 內建硬體
