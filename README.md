@@ -113,10 +113,18 @@ Raspberry pico_W
 
 
 ## 7. 實際案例
-#### 7-1. [光敏電阻_超音波感測器](./實際案例/project1/)
+#### 7-1. [光敏電阻_超音波感測器_WebServer](./實際案例/project1/)
 - 建立Web API(fastAPI)
 - 雲端資料庫(redis)
 - 建立Web Server(streamlit)
+
+#### 7-2. [光敏電阻_超音波感測器_MQTT](./實際案例/project2/)
+- Pico的publish
+- 建立本機MQTT Bloker
+- 本機端的subscript -> 儲存log檔
+- 本機端的publish -> AdaFruit_IO
+- 雲端Bloker(AdaFruit_IO)
+- AdaFruit_IO雲端顯示
 
 
 
