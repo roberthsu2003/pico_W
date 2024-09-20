@@ -102,13 +102,14 @@ Raspberry pico_W
 - 6-1-1 [**使用GET傳送資料**](./使用make/)
 - 6-1-2 [**超過警告溫度傳送line訊息**](./使用make/超過警告溫度傳送line訊息/)
 
-### 6-2 Blynk.Console 服務
-- 6-2-1 [**Blynk.Console 說明**](./使用Blynk_Console/)
+### 6-2 Blynk.Cloud 服務
+- 6-2-1 [**Blynk.Cloud 說明**](./使用Blynk_Console/)
 - 6-2-2 [**控制LED**](./使用Blynk_Console/1控制LED/)
 - 6-2-3 [**光敏電阻_超音波感測器**](./使用Blynk_Console/2光敏電阻_超音波感測器)
 
 ## 6-3 MQTT Bloker 雲端服務
-### 6-3-1 [Adafruit IO](./AdafruitIO/)
+### 6-3-1 [**Adafruit IO**](./mqtt/AdafruitIO/)
+### 6-3-2 [**Blynk.Cloud**](./mqtt/blynk_cloud/)
 
 
 
