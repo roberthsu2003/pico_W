@@ -24,12 +24,12 @@ pip3 install --upgrade paho-mqtt
 連線雲端的設定
 
 ```
-# Fill in information from Blynk Device Info here.
+# 在此填入 Blynk Device Info 的資訊
 BLYNK_TEMPLATE_ID   = ""
 BLYNK_TEMPLATE_NAME = ""
 BLYNK_AUTH_TOKEN    = ""
 
-# Change the default Blynk server. Applicable for users with a white label plan.
+# 變更預設 Blynk 伺服器。
 BLYNK_MQTT_BROKER   = "blynk.cloud"
 ```
 
@@ -149,6 +149,9 @@ from urllib.parse import urlparse
 mqtt = Client(CallbackAPIVersion.VERSION2)
 device = demo.Device(mqtt)
 
+#請參考paho-mqtt的說明書
+#https://eclipse.dev/paho/files/paho.mqtt.python/html/client.html
+
 def on_connect(mqtt, obj, flags, reason_code, properties):
     if reason_code == 0:
         print("Connected [secure]")
@@ -178,11 +181,22 @@ def on_message(mqtt, obj, msg):
         device.process_message(topic, payload)
 
 def main():
+		#設定安全連線TLS 1.2版本
     mqtt.tls_set(tls_version=ssl.PROTOCOL_TLSv1_2)
+    
+    #必需提供一個callback的function,當成功連線至MQTT broker
     mqtt.on_connect = on_connect
+    
+    #必需提供一個callback的function,當blocker接收收到訂閱的topic
     mqtt.on_message = on_message
+    
+    #設定使用者名稱和密碼,Blynk要求使用者名稱都要用"device"
     mqtt.username_pw_set("device", config.BLYNK_AUTH_TOKEN)
+    
+    #使用非同步連接至MQTT Bloker,此方法連接到MQTT broker, 沒有阻止後續程式的執行
     mqtt.connect_async(config.BLYNK_MQTT_BROKER, 8883, 45)
+    
+    #使用loop_start(),是在背景執行網路事件,這允許當訂閱的訊息從blocker傳過來時,程式依舊可以繼續執行。
     mqtt.loop_start()
 
     while True:
