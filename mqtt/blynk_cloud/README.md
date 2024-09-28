@@ -199,6 +199,7 @@ def main():
     #使用loop_start(),是在背景執行網路事件,這允許當訂閱的訊息從blocker傳過來時,程式依舊可以繼續執行。
     mqtt.loop_start()
 
+		#主程式執行
     while True:
         device.update()
         time.sleep(1)

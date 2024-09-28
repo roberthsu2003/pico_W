@@ -32,9 +32,12 @@ Raspberry pico_W
 
 ### 2-3 [microPython for Rp2](https://docs.micropython.org/en/latest/rp2/general.html)
 
-### 2-4 [pico Examples](https://github.com/raspberrypi/pico-micropython-examples/tree/master)
+### 2-4 [MicroPython Library](https://docs.micropython.org/en/latest/library/index.html#)
+- **Python standard libraries and micro-libraries**
 
-### 2-5 [picozeor官網](https://picozero.readthedocs.io/en/latest/)
+### 2-5 [pico Examples](https://github.com/raspberrypi/pico-micropython-examples/tree/master)
+
+### 2-6 [picozeor官網](https://picozero.readthedocs.io/en/latest/)
 
 ## 3. 套件購買網址
 - [**pico主板**](https://piepie.com.tw/product/raspberry-pi-pico-wh?hilite=pico)
