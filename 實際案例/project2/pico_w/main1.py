@@ -1,69 +1,53 @@
-from tools import connect,reconnect
-import urequests as requests
-from machine import Pin,ADC,Timer,RTC
-import utime
-import ujson
+from machine import Timer,ADC,Pin,PWM,RTC
+import tools
+from umqtt.simple import MQTTClientt 
 
-
-
-adc_light = ADC(Pin(28))
-trigger = Pin(16, Pin.OUT)
-echo = Pin(17, Pin.IN)
-
-def ultra()->float:      #建立一個函式
-   utime.sleep_us(2)  #暫停兩微秒，確保上一個設定低電位已經完成
-   trigger.high()
-   utime.sleep_us(10)  #拉高電位後，等待10微秒後，立即設定為低電位
-   trigger.low()    
-   while echo.value() == 0:         #建立一個while迴圈檢查回波引腳是否值為0，紀錄當時時間
-       signaloff = utime.ticks_us()   
-   while echo.value() == 1:         #建立一個while迴圈檢查回波引腳是否值為1，紀錄當時時間
-       signalon = utime.ticks_us()  
-   timepassed = signalon - signaloff    #計算發送與接收時間差
-   distance = (timepassed * 0.0343) / 2  #聲波行進時間 x 聲速(343.2 m/s，即每微秒0.0343公分)，來回距離再除以2  
-   return distance
-   
-def lightSensor()->float:
+def do_thing(t):
+    '''
+    處理溫度和光線
+    '''
+    reading = adc.read_u16() * conversion_factor
+    temperature = 27 - (reading - 0.706)/0.001721
+    print(f'溫度:{temperature}')
     light_value = adc_light.read_u16()
-    return light_value
+    print(f'光線:{light_value}')
+    
+    
+def do_thing1(t):
+    '''
+    處理可變電阻
+    '''
+    adc1 = ADC(Pin(26))
+    duty = adc1.read_u16()
+    pwm.duty_u16(duty)    
+    print(f'可變電阻:{round(duty/65535*10)}')
 
 
-   
-def callback1(t:Timer):
-    distance = ultra()
-    light_value = lightSensor()
-    rtc = RTC().datetime()
-    date_str:str = f'{rtc[0]}-{rtc[1]}-{rtc[2]}-{rtc[4]}-{rtc[5]}-{rtc[6]}'
-    
-    #不要使用https呼叫,沒有傳出值
-    #更新V0->distance
-    #更新V1->light
-    print(distance)
-    print(light_value)
-    print(date_str)
-    
-    #本機執行
-    #url = f'http://10.170.1.42:8000/items/{date_str}/{distance}/{light_value}'
-    
-    #render端執行
-    url = f'https://pico-w-distance-light.onrender.com/items/{date_str}/{distance}/{light_value}'
+def main():
+    t1 = Timer(period=1000, mode=Timer.PERIODIC, callback=do_thing)
+    t2 = Timer(period=500, mode=Timer.PERIODIC, callback=do_thing1)
+    mqtt = Client(CallbackAPIVersion.VERSION2)
+    #必需提供一個callback的function,當成功連線至MQTT broker
+    mqtt.on_connect = on_connect
+    #必需提供一個callback的function,當blocker接收收到訂閱的topic
+    mqtt.on_message = on_message
+    #設定使用者名稱和密碼,Blynk要求使用者名稱都要用"device"
+    mqtt.username_pw_set("pi", 'raspberry')
+    #使用非同步連接至MQTT Bloker,此方法連接到MQTT broker, 沒有阻止後續程式的執行
+    mqtt.connect_async('127.0.0.1', 1883, 45) #無ssl要連線的port是1883
     
     
-    try:        
-        response = requests.get(url)        
-    except:
-        reconnect()
+
+if __name__ == "__main__":
+    #pico_連結電腦時的寫法,要用connect
+    try:
+        tools.connect()
+    except RuntimeError as e:
+        print(f"{{e}")
     else:
-        print("server接收") #但要檢查status_code,是否回應成功        
-        if response.status_code == 200:
-            print("成功傳送,status_code==200")
-        else:
-            print("server回應有問題")
-            print(f'status_code:{response.status_code}')
-        response.close()
-    
-    
-connect()
-time1 = Timer()
-time1.init(period=10000,callback=callback1)
-
+        #sensor setup
+        adc = ADC(4) #內建溫度感測器
+        adc_light = ADC(Pin(28)) #光線感測器
+        pwm = PWM(Pin(15),freq=50) #可變電阻
+        conversion_factor = 3.3 / (65535) #電壓轉換率    
+        main()
