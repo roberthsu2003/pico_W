@@ -398,6 +398,12 @@ if __name__ == "__main__":
     main()
 ```
 
+### 3.4 第4階段-硬體,網路,教室MQTT,Blynk MQTT
+
+**架構圖**
+
+![](./images/pic11.png)
+
 
 
 
